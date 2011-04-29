@@ -1,0 +1,35 @@
+=== What is coffee-filter?
+Coffee-filter provides a custom haml filter allowing you to inline coffeescript in your haml templates.
+It was inspired by Ivan Nemytchenko's coffee-haml-filter but I wanted an installable gem and "coffeescript" as the filter name.
+
+=== Example
+Haml:
+
+  %div
+    stuff
+    :coffeescript
+      alert 'here'
+
+Html:
+
+  <div>
+    stuff
+    <script type='text/javascript'>
+      //<![CDATA[
+        (function() {
+      alert('here');
+    }).call(this);
+
+      //]]>
+    </script>
+  </div>
+
+=== Installation
+Add the following to your Gemfile:
+
+  gem 'coffee-filter'
+
+
+Copyright (c) 2011 Paul Nicholson, released under the MIT license
+
+
