@@ -1,7 +1,9 @@
+require 'haml'
+
 module Coffee
   module Filter
     module Coffeescript
-      include Haml::Filters::Base
+      include ::Haml::Filters::Base
 
       lazy_require 'coffee-script'
 
