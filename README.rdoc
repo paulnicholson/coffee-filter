@@ -29,7 +29,18 @@ Add the following to your Gemfile:
 
   gem 'coffee-filter'
 
+=== Caveats
+Using Ruby interpolation within the +:coffeescript+ block will prevent Haml from caching the result of compilation.
+This means that your coffeescript block will be compiled by the coffeescript engine on runtime during every request,
+which is something you'll definitely want to avoid (since it's orders of magnitude slower).
+
+In other words, using constructs similar to this:
+
+  :coffeescript
+    @server_time = #{Time.now.to_i}
+
+will cost you around 100ms on each request. Either use the +:javascript+ filter for this,
+or embed the dynamic content in some other way in the DOM.
+
 
 Copyright (c) 2011 Paul Nicholson, released under the MIT license
-
-
