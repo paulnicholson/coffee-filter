@@ -1,3 +1,6 @@
+== For Haml < 4.0
+Haml >= 4.0 includes built-in support for coffeescript.
+
 === What is coffee-filter?
 Coffee-filter provides a custom haml filter allowing you to inline coffeescript in your haml templates.
 It was inspired by Ivan Nemytchenko's coffee-haml-filter but I wanted an installable gem and "coffeescript" as the filter name.
