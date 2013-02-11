@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{CoffeeFilter is a custom haml filter for rendering coffeescript inside your haml templates. It was inspired by Ivan Nemytchenko's coffee-haml-filter but I wanted an installable gem and coffeescript as the filter name.}
 
   s.rubyforge_project = "coffee-filter"
-  s.add_dependency('haml', '>= 3.0.18')
+  s.add_dependency('haml', '< 4.0')
   s.add_dependency('coffee-script', '>= 2.2.0')
 
   s.files         = `git ls-files`.split("\n")
