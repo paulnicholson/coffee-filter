@@ -3,14 +3,14 @@ Haml >= 4.0 includes built-in support for coffeescript.
 
 === What is coffee-filter?
 Coffee-filter provides a custom haml filter allowing you to inline coffeescript in your haml templates.
-It was inspired by Ivan Nemytchenko's coffee-haml-filter but I wanted an installable gem and "coffeescript" as the filter name.
+It was inspired by Ivan Nemytchenko's coffee-haml-filter but I wanted an installable gem and "coffee" as the filter name.
 
 === Example
 Haml:
 
   %div
     stuff
-    :coffeescript
+    :coffee
       alert 'here'
 
 Html:
@@ -33,13 +33,13 @@ Add the following to your Gemfile:
   gem 'coffee-filter'
 
 === Caveats
-Using Ruby interpolation within the +:coffeescript+ block will prevent Haml from caching the result of compilation.
+Using Ruby interpolation within the +:coffee+ block will prevent Haml from caching the result of compilation.
 This means that your coffeescript block will be compiled by the coffeescript engine on runtime during every request,
 which is something you'll definitely want to avoid (since it's orders of magnitude slower).
 
 In other words, using constructs similar to this:
 
-  :coffeescript
+  :coffee
     @server_time = #{Time.now.to_i}
 
 will cost you around 100ms on each request. Either use the +:javascript+ filter for this,
