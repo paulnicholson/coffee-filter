@@ -2,7 +2,7 @@ require 'haml'
 
 module Coffee
   module Filter
-    module Coffeescript
+    module Coffee
       include ::Haml::Filters::Base
 
       lazy_require 'coffee-script'
