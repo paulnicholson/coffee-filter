@@ -1,4 +1,4 @@
-require 'coffee-filter/coffeescript'
+require 'coffee-filter/coffee'
 
 module Coffee
   module Filter
